@@ -6,6 +6,7 @@ $kaldi-red-invert: #fff
 
 $primary: $kaldi-red
 $primary-invert: $kaldi-red-invert
+$column-gap: 0.1rem
 
 .content .taglist
   list-style: none
@@ -39,4 +40,36 @@ $primary-invert: $kaldi-red-invert
 .margin-top-0
   margin-top: 0 !important
 
+.grid-list
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+
+.grid-item
+  width: 300px
+  padding: 3px 5px
+  height: auto
+
+.content-box
+  opacity: 0
+  transition: all 0.1s ease-in-out
+  background-color: rgba(255, 255, 255, 0.8)
+  color: black
+  font-weight: bold
+  padding: 10px
+  margin-top: 20px
+  width: 100%
+  transform: scale(1)
+
+
+.column:hover .content-box
+  opacity: 1
+
+.column:hover
+  transform: scale(1.01)
+  transition: all 0.1s ease-in-out
+
 @import "~bulma"
+
+.section
+  padding: 3rem 0rem

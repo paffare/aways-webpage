@@ -1,41 +1,68 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from "react";
+import Link from "gatsby-link";
+import logo from "../img/aways_logo_black.png";
 
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isActive: false
+    };
+  }
 
-const Navbar = () => (
-  <nav className="navbar is-transparent">
-    <div className="container">
-      <div className="navbar-brand">
-        <Link to="/" className="navbar-item">
-          <figure className="image">
-            <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-          </figure>
-        </Link>
-      </div>
-      <div className="navbar-start">
-        <Link className="navbar-item" to="/about">
-          About
-        </Link>
-        <Link className="navbar-item" to="/products">
-          Products
-        </Link>
-      </div>
-      <div className="navbar-end">
-        <a
-          className="navbar-item"
-          href="https://github.com/AustinGreen/gatsby-netlify-cms-boilerplate"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="icon">
-            <img src={github} alt="Github" />
-          </span>
-        </a>
-      </div>
-    </div>
-  </nav>
-)
+  render() {
+    return (
+      <nav className="navbar is-transparent">
+        <div className="container">
+          <div className="navbar-brand">
+            <Link to="/" className="navbar-item">
+              <figure className="image">
+                <img src={logo} alt="AWAYS" style={{ width: "88px" }} />
+              </figure>
+            </Link>
+            <a
+              role="button"
+              className={
+                this.state.isActive
+                  ? "navbar-burger is-active"
+                  : "navbar-burger"
+              }
+              aria-label="menu"
+              aria-expanded="false"
+              onClick={() => this.setState({ isActive: !this.state.isActive })}
+            >
+              <span aria-hidden="true" />
+              <span aria-hidden="true" />
+              <span aria-hidden="true" />
+            </a>
+          </div>
+          <div className={
+            this.state.isActive
+              ? "navbar-menu is-active"
+              : "navbar-menu"
+          }>
+            <div className="navbar-end">
+              <Link className="navbar-item" to="/login">
+                Login
+              </Link>
+              <Link className="navbar-item" to="/signup">
+                Signup
+              </Link>
+              <Link className="navbar-item" to="/share">
+                Share
+              </Link>
+              <Link className="navbar-item" to="/follow">
+                Follow
+              </Link>
+              <Link className="navbar-item" to="/subscribe">
+                Subscribe
+              </Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+    );
+  }
+}
 
-export default Navbar
+export default Navbar;

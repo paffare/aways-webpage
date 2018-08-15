@@ -6,40 +6,42 @@ export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
-
     return (
-      <section className="section">
-        <div className="container">
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
-          </div>
-          <div className="columns">
-            {posts.map(({ node: post }) => (
-              <div
-                className="column is-4"
-                style={{ border: "1px solid #eaecee", padding: "1em", background: post.frontmatter.thumbnail }}
-                key={post.id}
-              >
-                <p>
-
-                  <Link className="has-text-primary" to={post.fields.slug}>
-                    {post.frontmatter.title}
-                  </Link>
-                </p>
-                <p>
-
-                  <Link className="button is-small" to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
-              </div>
-            ))}
+      <div className="section">
+        <div>
+          <div className="columns is-multiline is-1">
+            {posts.map(({ node: post }) => {
+              return <GridItem {...post} />;
+            })}
+            {posts.map(({ node: post }) => {
+              return <GridItem {...post} />;
+            })}
           </div>
         </div>
-      </section>
+      </div>
     );
   }
 }
+
+const GridItem = post => {
+  return (
+    <div
+      className="column is-one-third"
+      key={post.id}
+      style={{ position: "relative" }}
+    >
+      <Link className="has-text-primary" to={post.fields.slug}>
+        <div
+          className="content-box"
+          style={{ position: "absolute", top: 0, paddingTop: "10px" }}
+        >
+          {post.frontmatter.title}
+        </div>
+        <img src={post.frontmatter.thumbnail} />
+      </Link>
+    </div>
+  );
+};
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
