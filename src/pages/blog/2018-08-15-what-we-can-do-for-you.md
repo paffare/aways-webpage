@@ -1,12 +1,10 @@
 ---
 templateKey: blog-post
-thumbnail: /img/chemex.jpg
+thumbnail: /img/products-grid2.jpg
 shortDescription: 'We have solutions for both individuals, small and larger outdoor providers'
 title: What we can do for you
 date: '2018-08-15T12:01:22+02:00'
-description: |-
-
-   
+description: ' '
 tags:
   - aways
 ---
