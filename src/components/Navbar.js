@@ -17,7 +17,7 @@ class Navbar extends React.Component {
           <div className="navbar-brand">
             <Link to="/" className="navbar-item">
               <figure className="image">
-                <img src={logo} alt="AWAYS" style={{ width: "100px" }} />
+                <img src={logo} alt="AWAYS" style={{ width: "110px" }} />
               </figure>
             </Link>
             <a
