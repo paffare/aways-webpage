@@ -11,11 +11,13 @@ export default class IndexPage extends React.Component {
         <div className="content">
           <div className="columns is-multiline">
             {posts.map(({ node: post }) => {
-              return <GridItem {...post} />;
+              return <GridItem className={"column image is-half"} {...post} />;
             })}
+            <GridItem key={"own"} className={"column image is-half"} {...posts[0].node} />
             {posts.map(({ node: post }) => {
-              return <GridItem {...post} />;
+              return <GridItem className={"column image is-one-third"}{...post} />;
             })}
+            <GridItem key={"own1"} className={"column image"} {...posts[0].node} />
           </div>
         </div>
       </div>
@@ -26,7 +28,7 @@ export default class IndexPage extends React.Component {
 const GridItem = post => {
   return (
     <div
-      className="column image is-one-third"
+      className={post.className}
       key={post.id}
       style={{ position: "relative" }}
     >
