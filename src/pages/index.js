@@ -8,8 +8,8 @@ export default class IndexPage extends React.Component {
     const { edges: posts } = data.allMarkdownRemark;
     return (
       <div className="section">
-        <div>
-          <div className="columns is-multiline is-1">
+        <div className="content">
+          <div className="columns is-multiline">
             {posts.map(({ node: post }) => {
               return <GridItem {...post} />;
             })}
@@ -26,7 +26,7 @@ export default class IndexPage extends React.Component {
 const GridItem = post => {
   return (
     <div
-      className="column is-one-third"
+      className="column image is-one-third"
       key={post.id}
       style={{ position: "relative" }}
     >
@@ -37,7 +37,7 @@ const GridItem = post => {
         >
           {post.frontmatter.title}
         </div>
-        <img src={post.frontmatter.thumbnail} />
+        <img src={post.frontmatter.thumbnail} style={{ objectFit: "cover" }} />
       </Link>
     </div>
   );
