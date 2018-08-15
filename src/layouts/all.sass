@@ -1,4 +1,5 @@
 @import "~bulma/sass/utilities/initial-variables"
+@import url('https://fonts.googleapis.com/css?family=Roboto')
 
 // Config vars
 $kaldi-red: #FD461E
@@ -7,6 +8,7 @@ $kaldi-red-invert: #fff
 $primary: $kaldi-red
 $primary-invert: $kaldi-red-invert
 $column-gap: 0.1rem
+$body-family: "Roboto", sans-serif
 
 .content .taglist
   list-style: none
@@ -55,14 +57,10 @@ $column-gap: 0.1rem
   transition: all 0.1s ease-in-out
   background-color: rgba(255, 255, 255, 0.8)
   color: black
-  font-weight: bold
   padding: 10px
   margin-top: 20px
   width: 100%
   transform: scale(1)
-
-.column.image
-
 
 .column.image:hover .content-box
   opacity: 1
@@ -70,6 +68,9 @@ $column-gap: 0.1rem
 .column.image:hover
   transform: scale(1.01)
   transition: all 0.1s ease-in-out
+
+.navbar
+  border: 1px solid rgb(233, 233, 233)
 
 @import "~bulma"
 
