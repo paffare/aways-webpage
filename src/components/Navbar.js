@@ -36,26 +36,42 @@ class Navbar extends React.Component {
               <span aria-hidden="true" />
             </a>
           </div>
-          <div className={
-            this.state.isActive
-              ? "navbar-menu is-active"
-              : "navbar-menu"
-          }>
+          <div
+            className={
+              this.state.isActive ? "navbar-menu is-active" : "navbar-menu"
+            }
+          >
             <div className="navbar-end">
               <Link className="navbar-item" to="/login">
-                Login
+                LOGIN
               </Link>
               <Link className="navbar-item" to="/signup">
-                Signup
+                SIGNUP
               </Link>
-              <Link className="navbar-item" to="/share">
-                Share
-              </Link>
-              <Link className="navbar-item" to="/follow">
-                Follow
-              </Link>
+              <div className="navbar-item has-dropdown is-hoverable">
+                <div className="navbar-link">SHARE</div>
+                <div className="navbar-dropdown">
+                  <Link className="navbar-item" to="/follow">
+                    Instagram
+                  </Link>
+                  <Link className="navbar-item" to="/follow">
+                    Facebook
+                  </Link>
+                </div>
+              </div>
+              <div className="navbar-item has-dropdown is-hoverable">
+                <div className="navbar-link">FOLLOW</div>
+                <div className="navbar-dropdown">
+                  <Link className="navbar-item" to="/follow">
+                    Instagram
+                  </Link>
+                  <Link className="navbar-item" to="/follow">
+                    Facebook
+                  </Link>
+                </div>
+              </div>
               <Link className="navbar-item" to="/subscribe">
-                Subscribe
+                SUBSCRIBE
               </Link>
             </div>
           </div>
