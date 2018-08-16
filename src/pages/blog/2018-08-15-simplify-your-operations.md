@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-thumbnail: /img/products-grid3.jpg
+thumbnail: /img/chris-thompson-137484-unsplash.jpg
 shortDescription: Get more free time
 title: Simplify your operations
 date: '2018-08-15T11:12:48+02:00'
