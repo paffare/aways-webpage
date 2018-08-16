@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Link from "gatsby-link";
-import 'font-awesome/css/font-awesome.min.css';
-import video from "../img/video.mp4";
+import "font-awesome/css/font-awesome.min.css";
+import Card from "../components/Card";
+import GridItem from "../components/GridItem";
 
 export default class IndexPage extends React.Component {
   render() {
@@ -65,25 +65,7 @@ export default class IndexPage extends React.Component {
   }
 }
 
-const GridItem = post => {
-  return (
-    <div
-      className={post.className}
-      key={post.id}
-      style={{ position: "relative" }}
-    >
-      <Link className="has-text-primary" to={post.fields.slug}>
-        <div
-          className="content-box"
-          style={{ position: "absolute", bottom: 0, paddingTop: "10px" }}
-        >
-          {post.frontmatter.title}
-        </div>
-        <img src={post.frontmatter.thumbnail} style={{ objectFit: "cover" }} />
-      </Link>
-    </div>
-  );
-};
+
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
